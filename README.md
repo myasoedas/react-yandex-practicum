@@ -1,9 +1,6 @@
 # react-yandex-practicum
 ## Упражнение 3 02: JSX задает CSS свойства элементов
 ### Добавьте класс item к элементам div, которые находятся внутри 
-```
-code block
-```
 ```HTML
 <div className='content'>
 ```  

@@ -2,17 +2,24 @@
 <html>
 <head>
   <meta charset="UTF-8" />
+  <!-- Подключаем шрифты -->
   <link rel="stylesheet" href="./fonts/fonts.css" />
+  <!-- Подключаем стили CSS -->
   <link rel="stylesheet" href="./style.css" />
+  <!-- Подключаем библиотеки react и react-dom -->
   <script src="https://code.s3.yandex.net/react/libs/react.development.js"></script>
   <script src="https://code.s3.yandex.net/react/libs/react-dom.development.js"></script>
+  <!-- Подключаем библиотеку babel -->
   <script src="https://code.s3.yandex.net/react/libs/babel.min.js"></script>
 </head>
 <body>
+<!-- Корневой узел для рендеринга React -->
 <div id="root"></div>
 <script type="text/jsx">
   const hasAuth = false; // Это значение задаётся на бэкенде. Магия!
-
+  // Если hasAuth = true - показать личный кабинет
+  // Если hasAuth = false - показать страницу регистрации
+  // ? : - аналог if else
   ReactDOM.render((
     <div>
       { hasAuth ? (      

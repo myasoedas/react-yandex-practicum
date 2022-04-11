@@ -23,11 +23,14 @@
 <body>
   <div id="root"></div>
     <script type="text/jsx">
+    // В JSX составные свойства пишутся через camelCase. Пример: borderRadius
+    // В JSX вместо class пишут className
+    // В JSX значения свойств помещают в кавычки. Пример: borderRadius: '30px'
       ReactDOM.render((
         <div className='content'>
-          <div>Квадрат</div>
-          <div>Полуквадрат</div>
-          <div>Круг</div>
+          <div className="item">Квадрат</div>
+          <div className="item" style={{borderRadius: '30px',}}>Полуквадрат</div>
+          <div className="item" style={{borderRadius: '50%',}}>Круг</div>
         </div>
       ), document.querySelector('#root'));
     </script>

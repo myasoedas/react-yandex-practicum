@@ -1,0 +1,19 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  width: 720px;
+  height: 780px;
+  margin: 0 auto;
+  background-image: url(./images/bg.png);
+}
+
+h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 96px;
+  text-align: center;
+  color: #3C39EC;
+  margin: auto;
+}

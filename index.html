@@ -14,11 +14,16 @@
 	   <!-- Корневой узел для рендеринга react-->	
 	   <div id="root"></div>
 	      <script>
-		 // ReactDOM.render - функция, которая отвечает за рендеринг нашей разметки в окне браузера    
+		 // ReactDOM.render - функция, которая отвечает за рендеринг нашей разметки в окне браузера.    
 	         ReactDOM.render(
-		    // Первый аргумент фукции ReactDOM.render - отвечает за отображение заголовка h1 с текстом "Привет, React!" 
-		    React.createElement("h1", null, "Привет, React!"),
-		    // Второй аргумент фукции ReactDOM.render - указывает корневой узел HTML страницы для рендеринга React 	 
+		    // Первый аргумент фукции ReactDOM.render - отвечает за отображение HTML элемента <div> с динамическим содержимым.
+		    React.createElement(
+		       "div", 
+		       null,		       
+		       React.createElement("h1", null, "Текущее время:"),
+                       React.createElement("h2", null, new Date().toLocaleTimeString())
+		    ),
+		    // Второй аргумент фукции ReactDOM.render - указывает корневой узел HTML страницы для рендеринга React. 	 
 		    document.getElementById('root')
 		 );
 	      </script>

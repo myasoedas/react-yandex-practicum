@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./fonts/fonts.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://code.s3.yandex.net/react/libs/react.development.js"></script>
+  <script src="https://code.s3.yandex.net/react/libs/react-dom.development.js"></script>
+  <script src="https://code.s3.yandex.net/react/libs/babel.min.js"></script>
+  <style type="text/css">
+    .item {
+      width: 160px;
+      height: 160px;
+      margin: auto;
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+    <script type="text/jsx">
+      ReactDOM.render((
+        <div className='content'>
+          <div>Квадрат</div>
+          <div>Полуквадрат</div>
+          <div>Круг</div>
+        </div>
+      ), document.querySelector('#root'));
+    </script>
+  </body>
+</html>

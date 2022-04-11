@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
+  <head>
       <meta charset="UTF-8" />
+      <!-- Подключаем шрифты -->	  
       <link rel="stylesheet" href="./fonts/fonts.css" />
+      <!-- Подключаем таблицу стилей CSS -->
       <link rel="stylesheet" href="./style.css" />
-      <script
-			src="https://code.s3.yandex.net/react/libs/react.development.js"
-			crossorigin
-		></script>
-		<script
-			src="https://code.s3.yandex.net/react/libs/react-dom.development.js"
-			crossorigin
-		></script>
+      <!--  Подключаем библиотеки JS: react и react-dom-->
+      <script src="https://code.s3.yandex.net/react/libs/react.development.js" crossorigin></script>
+      <script src="https://code.s3.yandex.net/react/libs/react-dom.development.js" crossorigin></script>
 	</head>
 	<body>
-		<div id="root"></div>
-		<script>
-			ReactDOM.render(
-			  React.createElement("h1", null, "Привет, React!"),
-			  document.getElementById('root')
-			);
-		</script>
+	   <!-- Корневой узел для рендеринга react-->	
+	   <div id="root"></div>
+	      <script>
+		 // ReactDOM.render - функция, которая отвечает за рендеринг нашей разметки в окне браузера    
+	         ReactDOM.render(
+		    // Первый аргумент фукции ReactDOM.render - отвечает за отображение заголовка h1 с текстом "Привет, React!" 
+		    React.createElement("h1", null, "Привет, React!"),
+		    // Второй аргумент фукции ReactDOM.render - указывает корневой узел HTML страницы для рендеринга React 	 
+		    document.getElementById('root')
+		 );
+	      </script>
 	</body>
 </html>

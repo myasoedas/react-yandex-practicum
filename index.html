@@ -11,10 +11,13 @@
 <body>
   <div id="root"></div>
   <script type="text/jsx">
+  //JSX-код не может содержать больше одного элемента на самом верхнем уровне. Нужно добавить фрагмент: <> </>
     ReactDOM.render((
+    <>
       <p className='text'>Когда в товарищах согласья нет,</p>
       <p className='text'>На лад их дело не пойдет,</p>
       <p className='text'>И выйдет из него не дело, только мука.</p>
+    </>
     ), document.querySelector('#root'));
   </script>
 </body>

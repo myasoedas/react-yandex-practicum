@@ -12,18 +12,16 @@
   <div id="root"></div>
   <script type="text/jsx">
     const poemClass = "poem poem-classic"
-
     const color = "зеленый";
     const metalType = "Златая";
     const animal = "кот";
     const route = "кругом";
-
     ReactDOM.render((
-      <div>
-        <p>У лукоморья дуб ;</p>
-        <p> цепь на дубе том:</p>
-        <p>И днём и ночью  учёный</p>
-        <p>Всё ходит по цепи ;</p>
+      <div className={poemClass}>
+        <p>У лукоморья дуб {color};</p>
+        <p>{metalType} цепь на дубе том:</p>
+        <p>И днём и ночью {animal} учёный</p>
+        <p>Всё ходит по цепи {route};</p>
       </div>
     ), document.querySelector('#root'));
   </script>

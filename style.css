@@ -17,3 +17,13 @@ h1 {
   color: #3C39EC;
   margin: auto;
 }
+
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 96px;
+  text-align: center;
+  color: #3C39EC;
+  margin: auto;
+}

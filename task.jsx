@@ -15,7 +15,13 @@ class List extends React.Component {
         <h1 className="table__title">
           Игроки киберспортивной команды <span className="table__span">NaVi</span>
         </h1>
-        <ol className="table__content">{/* Ваш код будет здесь */}</ol>
+        <ol className="table__content">
+          <Player children="flamie" />
+          <Player children="s1mple" />
+          <Player children="electronic" />
+          <Player children="Boombl4" />
+          <Player children="Perfecto" />
+        </ol>
       </section>
     );
   }

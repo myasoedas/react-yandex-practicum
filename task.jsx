@@ -10,9 +10,24 @@ class Page extends React.Component {
 
 class CurrentTime extends React.Component { 
   render() {
-    {/* Ваш код здесь */}
+    const curentHours = new Date().getHours(); 
+    let curentGreeting = '';
+    let curentImg = '';
+    if (curentHours >= 4 && curentHours < 12) {      
+      curentGreeting = "Доброе утро";
+      curentImg = "morning";      
+    } else if (curentHours >= 12 && curentHours < 16) {      
+      curentGreeting = "Добрый день";
+      curentImg = "afternoon";      
+    } else if (curentHours >= 16 && curentHours < 23) {      
+      curentGreeting = "Добрый вечер";
+      curentImg = "evening";      
+    } else {      
+      curentGreeting = "Доброй ночи";
+      curentImg = "night";      
+    }    
     return (
-      <Page />
+      <Page img={curentImg} greeting={curentGreeting} />
     )
   }
 }

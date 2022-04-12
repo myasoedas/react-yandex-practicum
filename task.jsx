@@ -45,18 +45,8 @@ class Card extends React.Component {
     return (
       <article className="main">
         <h1 className="main__title">{data.name}</h1>
-        <div className="main__container">
-          <p className="main__text">{`Цена: ${data.priceInfo.price} ${
-            data.priceInfo.currency
-          }.`}</p>
-          <p className="main__text">{`Налог: ${data.priceInfo.taxes}%`}</p>
-        </div>
-        <div className="main__container">
-          <h3 className="main__subtitle">Характеристики:</h3>
-          <p className="main__text">{`Цвет: ${data.properties.color}`}</p>
-          <p className="main__text">{`Материал: ${data.properties.material}`}</p>
-          <p className="main__text">{`Вес: ${data.properties.weight} кг`}</p>
-        </div>
+        <ProductPrice priceInfo={data.priceInfo} />
+        <ProductSpecs properties={data.properties} />
         <div className="main__container">
           <h3 className="main__subtitle">Описание:</h3>
           <p className="main__text">{data.info.fullDecription}</p>

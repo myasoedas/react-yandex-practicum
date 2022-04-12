@@ -41,35 +41,3 @@ class Button extends React.Component {
     );
   }
 }
-
-class App extends React.Component {
-  render() {
-    const data = {      
-      menu: [
-        {text: 'О НАС'},
-        {text: 'ЦЕНЫ' },
-        {text: 'БЛОГ' },
-      ],
-      button: {text: 'ВОЙТИ'},      
-    };    
-    return (
-      <div className='page'>
-        <NavBar  children={
-        <>    
-          <Logo />
-          <Menu children={
-            <>
-              <MenuItem text={data.menu.[0].text}/> 
-              <MenuItem text={data.menu.[1].text}/>
-              <MenuItem text={data.menu.[2].text}/>
-            </>        
-          }/>
-          <Button text={data.button.text}/>           
-        </>           
-        }/>        
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.querySelector('#root'));

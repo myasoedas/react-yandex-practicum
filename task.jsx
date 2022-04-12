@@ -1,3 +1,23 @@
+function ProductPrice(props) {
+  return (
+    <div className="main__container">
+      <p className="main__text">{`Цена: ${props.priceInfo.price} ${props.priceInfo.currency}.`}</p>
+      <p className="main__text">{`Налог: ${props.priceInfo.taxes}%`}</p>
+    </div>
+  );
+}
+
+function ProductSpecs(props) {
+  return (
+    <div className="main__container">
+      <h3 className="main__subtitle">Характеристики:</h3>
+      <p className="main__text">{`Цвет: ${props.properties.color}`}</p>
+      <p className="main__text">{`Материал: ${props.properties.material}`}</p>
+      <p className="main__text">{`Вес: ${props.properties.weight} кг`}</p>
+    </div>
+  );
+}
+
 class Card extends React.Component {
   render() {
     const data = {

@@ -1,0 +1,70 @@
+.menu {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #3C39EC;
+}
+body {
+  background-color: #3C39EC;
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  background-color: #000;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.content {
+  background-color: #000;
+  position: relative;
+  padding-top: 40px;
+}
+
+.menu__img {
+  width: 100%;
+  margin-top: auto;
+  position: absolute;
+  bottom: 235px;
+}
+
+.menu__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 40px 24px;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0 0 40px;
+  margin: 0;
+}
+
+.nav__link {
+  margin: 0 40px 16px;
+  cursor: pointer;
+}
+
+.nav__link:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .menu {
+    width: 100%;
+  }
+
+  .menu__img {
+    bottom: 245px;
+  }
+}

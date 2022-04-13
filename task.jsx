@@ -16,11 +16,11 @@ class Employee extends React.Component {
   render() {
     return (
       <div className="card">
-        <img className="card__image" alt="аватар" />
-        <h4 className="card__name">Имя:</h4>
-        <p className="card__text">Полных лет:</p>
-        <p className="card__text">Место пребывания: {/* Страна, город */}</p>
-        <p className="card__text">Любимая технология:</p>
+        <img className="card__image" alt="аватар" src={this.state.avatar} />
+        <h4 className="card__name">Имя: {this.state.name}</h4>
+        <p className="card__text">Полных лет: {this.state.age}</p>
+        <p className="card__text">Место пребывания: {this.state.address.country}, {this.state.address.city}</p>
+        <p className="card__text">Любимая технология: {this.state.favoriteTechnology}</p>
       </div>
     );
   }

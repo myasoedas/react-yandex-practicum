@@ -9,10 +9,19 @@ class SettingsMenu extends React.Component {
       }
     }
   };
+  
+  
 
   toggleSidebar = () => {
     this.setState(prevState => ({
-      /* Ваш код будет здесь */
+      ...prevState,
+      userSettings: {
+        ...prevState.userSettings,
+        sidebar: {
+          ...prevState.sidebar,
+          enabled: this.state.userSettings.sidebar.enabled === false ? true : false
+      }
+    }
     }));
   };
 

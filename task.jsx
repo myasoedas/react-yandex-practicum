@@ -10,8 +10,6 @@ class SettingsMenu extends React.Component {
     }
   };
   
-  
-
   toggleSidebar = () => {
     this.setState(prevState => ({
       ...prevState,

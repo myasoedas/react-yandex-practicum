@@ -30,3 +30,7 @@ ReactDOM.render(
   </div>,
   document.querySelector('#root')
 );
+
+Image.defaultProps = {
+  src: './images/error.png'
+};

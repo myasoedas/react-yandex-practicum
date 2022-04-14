@@ -20,7 +20,9 @@ const RepliedMessage = ({ message }) => {
 const Chat = ({ thread }) => {
   return (
     <div className='thread'>
-      {/* Ваш код здесь */}
+      {thread.map((message, index) => (
+        <Message message={message} repliedMessage={thread.find((m) => m.id === message.replyTo)} key={message.id}/>
+      ))}  
     </div>
   );
 };

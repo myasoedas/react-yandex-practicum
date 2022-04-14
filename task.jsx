@@ -56,13 +56,39 @@ class CalendarEvent extends React.Component {
     timeStart: '14:30',
     duration: 40,
     location: 'Переговорная №4'
-  };
+  };  
+  
+getCurrentUserConfirmationStatus () {
+    return this.state.invited.find(user => user.id === this.state.currentUser).status;
+}
 
-  getCurrentUserConfirmationStatus() {}
+confirm = () => {
+    this.getCurrentUserConfirmationStatus !== STATUS_CONFIRMED &&
+      this.setState(prevState => ({
+        ...prevState,
+        invited: this.state.invited.map(user => {
+          if (user.id === this.state.currentUser) {
+            user.status = STATUS_CONFIRMED;
+            return user;
+          }
+          return user;
+        })
+      }));
+}
 
-  confirm = () => {}
-
-  cancel = () => {}
+cancel = () => {
+    this.getCurrentUserConfirmationStatus !== STATUS_CANCELED &&
+      this.setState(prevState => ({
+        ...prevState,
+        invited: this.state.invited.map(user => {
+          if (user.id === this.state.currentUser) {
+            user.status = STATUS_CANCELED;
+            return user;
+          }
+          return user;
+        })
+      }));
+  }
 
   render() {
     const confirmed = this.getCurrentUserConfirmationStatus() === STATUS_CONFIRMED;

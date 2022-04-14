@@ -2,6 +2,7 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = { fullScreen: false };
+    this.toggleFullScreen = this.toggleFullScreen.bind(this);
   }
 
   toggleFullScreen() {

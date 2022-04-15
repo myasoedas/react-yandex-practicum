@@ -7,6 +7,10 @@ class MouseTrack extends React.Component {
     document.addEventListener('mousemove', (e) => this.setState({mousePosition: [e.clientX, e.clientY]}))
   };
   
+  componentWillUnmount() {
+    document.removeEventListener('mousemove', (e) => this.setState({mousePosition: [e.clientX, e.clientY]}))
+  };
+  
   trackMousePos = e => {
     this.setState({
       mousePosition: [e.clientX, e.clientY]

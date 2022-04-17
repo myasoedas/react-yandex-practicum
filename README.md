@@ -11,3 +11,12 @@
 2. Метод handleFlowSelect управляет скоростью обдува. Используется в компоненте FlowControl: получает value и на основе этого значения изменяет this.state.flow.
 3. Метод handleTemperatureIncrease повышает температуры. Этот метод влияет на this.state.temperature, увеличивая её на единицу, но не выше чем в константе MAX_TEMPERATURE. Используйте MAX_TEMPERATURE внутри метода, чтоб ограничить повышение температуры значением из этой константы. Метод передаётся в компонент MainDashboard в виде пропса onIncreaseClick.
 4. Метод handleTemperatureDecrease понижает температуру. Этот метод также влияет на this.state.temperature, уменьшая её на единицу, но не ниже чем в константе MIN_TEMPERATURE. Используйте MIN_TEMPERATURE внутри метода, чтоб ограничить понижение температуры значением из этой константы. Метод передаётся в компонент MainDashboard в виде пропса onDecreaseClick.
+
+PS: Чтобы ограничить повышение и понижение температуры используйте в соответствующих методах конструкцию вида: 
+```JSX
+if (this.state.temperature <= MIN_TEMPERATURE) return; 
+```
+Для включения и выключения используйте логический оператор НЕ(!) перед 
+```JSX 
+this.state.enabled в this.setState.
+```

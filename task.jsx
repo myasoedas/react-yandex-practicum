@@ -25,15 +25,20 @@ class App extends React.Component {
     hasError: false,
     data: []
   };
-
-  componentDidMount() {
-    // Ваш код здесь
-  }
-
+  
   getFilms = () => {
     this.setState({ ...this.state, hasError: false, isLoading: true });
-    // Ваш код здесь
-  };
+    fetch(
+      'https://api.nomoreparties.co/beatfilm-movies'
+    )
+      .then(r => r.json())   
+      .then(d => this.setState({ ...this.state, data: d, isLoading: false }))
+      .catch(e => this.setState({ ...this.state, isLoading: false, hasError: true }))            
+  }
+
+  componentDidMount() {
+    this.getFilms()
+  }  
 
   render() {
     const { data, isLoading, hasError } = this.state;
@@ -41,9 +46,7 @@ class App extends React.Component {
       <div className="app grid">
         {isLoading && 'Загрузка...'}
         {hasError && 'Произошла ошибка'}
-        {!isLoading &&
-          !hasError &&
-          !!data.length &&
+        {!isLoading && !hasError && !!data.length &&
           data.map((film, index) => <Film key={index} data={film} />)}
       </div>
     );

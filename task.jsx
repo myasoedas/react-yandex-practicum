@@ -28,9 +28,7 @@ class App extends React.Component {
   
   getFilms = () => {
     this.setState({ ...this.state, hasError: false, isLoading: true });
-    fetch(
-      'https://api.nomoreparties.co/beatfilm-movies'
-    )
+    fetch('https://api.nomoreparties.co/beatfilm-movies')
       .then(r => r.json())   
       .then(d => this.setState({ ...this.state, data: d, isLoading: false }))
       .catch(e => this.setState({ ...this.state, isLoading: false, hasError: true }))            

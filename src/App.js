@@ -11,17 +11,15 @@ export default class App extends React.Component {
     flow: 1
   };
 
-const handlePowerSwitch = () => {
+handlePowerSwitch = () => {
   this.setState(prevState => ({...prevState, enabled: !this.state.enabled}))
 };
 
-const handleFlowSelect = (value) => {
-  if (value !== this.state.flow) {
-    this.setState(prevState => ({...prevState, flow: value}))
-  } 
+handleFlowSelect = (value) => {  
+  this.setState(prevState => ({...prevState, flow: value}))   
 };
 
-const handleTemperatureIncrease = () => {
+handleTemperatureIncrease = () => {
   if (this.state.temperature < MAX_TEMPERATURE) {
     this.setState(prevState => ({
       ...prevState, temperature: prevState.temperature + 1
@@ -29,16 +27,12 @@ const handleTemperatureIncrease = () => {
   }  
 };
 
-const handleTemperatureDecrease = () => {
+handleTemperatureDecrease = () => {
   if (this.state.temperature > MIN_TEMPERATURE) {
     this.setState(prevState => ({
       ...prevState, temperature: prevState.temperature - 1
     }))
   }    
-};
-  
-const  plus = () => {
-  updateProduct({ ...product, count: product.count + 1 });
 };
 
   render() {
@@ -50,7 +44,7 @@ const  plus = () => {
           <h1 className={styles.title}>Гостиная</h1>
           <div className={styles.card}>
             <div className={styles.column}>
-              <SwitchControl enabled={enabled} onClick={handlePowerSwitch} />
+              <SwitchControl enabled={enabled} onClick={this.handlePowerSwitch} />
               <div>
                 <span className={styles.iconFan} />
                 <label>
@@ -61,7 +55,7 @@ const  plus = () => {
                         key={`flow_elem${elem}`}
                         flow={elem}
                         selectedFlow={this.state.flow}
-                        onClick={handleFlowSelect(elem)}
+                        onClick={this.handleFlowSelect}
                       />
                     ))}
                   </div>
@@ -70,8 +64,8 @@ const  plus = () => {
             </div>
             <MainDashboard
               temperature={this.state.temperature}
-              onIncreaseClick={handleTemperatureIncrease}
-              onDecreaseClick={handleTemperatureDecrease}
+              onIncreaseClick={this.handleTemperatureIncrease}
+              onDecreaseClick={this.handleTemperatureDecrease}
             />
             <div className={styles.column}>
               <span className={styles.iconDrop} />

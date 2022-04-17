@@ -11,7 +11,35 @@ export default class App extends React.Component {
     flow: 1
   };
 
-  /* Здесь ваш код */
+const handlePowerSwitch = () => {
+  this.setState(prevState => ({...prevState, enabled: !this.state.enabled}))
+};
+
+const handleFlowSelect = (value) => {
+  if (value !== this.state.flow) {
+    this.setState(prevState => ({...prevState, flow: value}))
+  } 
+};
+
+const handleTemperatureIncrease = () => {
+  if (this.state.temperature < MAX_TEMPERATURE) {
+    this.setState(prevState => ({
+      ...prevState, temperature: prevState.temperature + 1
+    }))
+  }  
+};
+
+const handleTemperatureDecrease = () => {
+  if (this.state.temperature > MIN_TEMPERATURE) {
+    this.setState(prevState => ({
+      ...prevState, temperature: prevState.temperature - 1
+    }))
+  }    
+};
+  
+const  plus = () => {
+  updateProduct({ ...product, count: product.count + 1 });
+};
 
   render() {
     const { enabled } = this.state;
@@ -22,7 +50,7 @@ export default class App extends React.Component {
           <h1 className={styles.title}>Гостиная</h1>
           <div className={styles.card}>
             <div className={styles.column}>
-              <SwitchControl enabled={enabled} onClick={/* Здесь ваш код */} />
+              <SwitchControl enabled={enabled} onClick={handlePowerSwitch} />
               <div>
                 <span className={styles.iconFan} />
                 <label>
@@ -33,7 +61,7 @@ export default class App extends React.Component {
                         key={`flow_elem${elem}`}
                         flow={elem}
                         selectedFlow={this.state.flow}
-                        onClick={/* Здесь ваш код */}
+                        onClick={handleFlowSelect(elem)}
                       />
                     ))}
                   </div>
@@ -42,8 +70,8 @@ export default class App extends React.Component {
             </div>
             <MainDashboard
               temperature={this.state.temperature}
-              onIncreaseClick={/* Здесь ваш код */}
-              onDecreaseClick={/* Здесь ваш код */}
+              onIncreaseClick={handleTemperatureIncrease}
+              onDecreaseClick={handleTemperatureDecrease}
             />
             <div className={styles.column}>
               <span className={styles.iconDrop} />

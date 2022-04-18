@@ -26,21 +26,23 @@ Message.propTypes = {
 const RepliedMessage = ({ message }) => <Message message={message} className={'replied-message'} />;
 
 RepliedMessage.propTypes = {
-  /* {Ваш код здесь} */
+  message: messagePropTypes.isRequired,
 };
 
 const Chat = ({ thread }) => (
   <div className="tread">
     {thread.map(message => {
       const repliedMessage = thread.find(m => m.id === message.replyTo);
-
       return <Message key={message.id} repliedMessage={repliedMessage} message={message} />;
     })}
   </div>
 );
 
 Chat.propTypes = {
-  /* {Ваш код здесь} */
+  thread: PropTypes.arrayOf,
+  message: messagePropTypes.isRequired,
+  repliedMessage: messagePropTypes,
+  
 };
 
 export default class App extends React.Component {
